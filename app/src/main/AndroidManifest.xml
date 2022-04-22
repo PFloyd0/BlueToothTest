@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bluetoothtest">
+
+    <!--    声明权限-->
+    <!--    声明蓝牙权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!--    声明蓝牙管理权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--    声明获取粗略位置权限-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--    声明获取精确位置权限-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<!--        声明本设备只适用于BLE权限, 若不止BLE权限可把required设为false-->
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BluetoothTest">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".LocationService" />
+
+    </application>
+
+</manifest>

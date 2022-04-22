@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.example.bluetoothtest"
+        minSdk 21
+        targetSdk 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+//    implementation group: 'org.jpmml', name: 'pmml-evaluator-kryo', version: '1.6.3'
+    implementation group: 'org.jpmml', name: 'pmml-evaluator', version: '1.6.3'
+    implementation group: 'xerces', name: 'xercesImpl', version: '2.12.0'
+//    implementation group: 'org.codehaus.mojo', name: 'animal-sniffer-maven-plugin', version: '1.21'
+
+
+//    implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '3.0.0'
+//    implementation group: 'javax.xml', name: 'jaxb-api', version: '2.1'
+//    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '3.0.0'
+//    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.0'
+//    implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '3.0.0'
+
+
+}
+
+//apply plugin: 'maven-publish'
+//
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId = 'org.jpmml'
+//            artifactId = 'pmml-evaluator'
+//            version = '1.4.15'
+//        }
+//        maven(MavenPublication) {
+//            groupId = 'com.sun.xml.bind'
+//            artifactId = 'jaxb-core'
+//            version = '2.2.11'
+//        }
+//        maven(MavenPublication) {
+//            groupId = 'javax.xml'
+//            artifactId = 'jaxb-api'
+//            version = '2.1'
+//        }
+//        maven(MavenPublication) {
+//            groupId = 'com.sun.xml.bind'
+//            artifactId = 'jaxb-impl'
+//            version = '2.2.11'
+//        }
+//
+//    }
+//}
